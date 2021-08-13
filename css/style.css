@@ -1287,6 +1287,7 @@ label[class=burger_open] span {
   justify-content: center;
   align-items: center;
   height: 95vh;
+  padding-top: 100px;
   padding-bottom: 15px;
   position: relative;
   background: url("../images/Shade.png") no-repeat, url("../images/SymbolLongleg.png") no-repeat;
@@ -1806,7 +1807,9 @@ label[class=burger_open] span {
     display: grid;
     grid-template-rows: 57px repeat(2, minmax(198px, 1fr));
     grid-template-columns: minmax(265px, 1fr) minmax(0, 113px) minmax(265px, 1fr) minmax(0, 113px) minmax(265px, 1fr);
-    grid-template-areas: "post-1 post-1 post-3 post-3 post-4" "post-2 post-2 post-3 post-3 post-4" "post-5 post-6 post-6 post-7 post-7";
+    grid-template-areas: "post-1 post-1 post-3 post-3 post-4"
+ "post-2 post-2 post-3 post-3 post-4"
+ "post-5 post-6 post-6 post-7 post-7";
   }
   /* line 471, ../../all lessons/final_lesson/scss/_homepage.scss */
   .cases .cases_card1 {
