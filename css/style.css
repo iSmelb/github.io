@@ -422,7 +422,7 @@ img {
 }
 
 /* line 21, ../../all lessons/final_lesson/scss/_variable.scss */
-.services h2, .team_person_main h2, .publications h2, .about_info h1, .tagline h2, .team h1, .profile h1, .services_page .info_service h1 {
+.services h2, .team_person_main h2, .publications h2, .about_info h1, .tagline h2, .team h1, .profile h1, .services_page .info_service h1, .publications_entry .publications_card_entry .text h1 {
   font-size: 32px;
   line-height: 1.2;
   font-weight: 700;
@@ -432,14 +432,14 @@ img {
 }
 
 /* line 35, ../../all lessons/final_lesson/scss/_variable.scss */
-.main_info h2, .contact_form h1 {
+.main_info h2, .contact_form h1, .publications_entry .publications_card_entry .text h2 {
   font-size: 22px;
   line-height: 1.2;
   font-weight: 500;
 }
 
 /* line 46, ../../all lessons/final_lesson/scss/_variable.scss */
-.services_card h3, .cases [class^="cases_card"] h3, .services_page .list h3 {
+.services_card h3, .cases [class^="cases_card"] h3, .services_page .list h3, .publications_entry .publications_card_entry .text h3 {
   font-size: 18px;
   line-height: 1.2;
   font-weight: 500;
@@ -462,7 +462,7 @@ img {
 }
 
 /* line 76, ../../all lessons/final_lesson/scss/_variable.scss */
-.publications_card .text time {
+.publications_card .text time, .publications_entry .publications_card_entry .text time {
   font-size: 12px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -661,6 +661,27 @@ p {
   position: absolute;
   left: -12px;
   top: 10px;
+}
+
+/* line 105, ../../all lessons/final_lesson/scss/_global.scss */
+ol {
+  counter-reset: myCounter;
+  padding-left: 20px;
+}
+
+/* line 109, ../../all lessons/final_lesson/scss/_global.scss */
+ol li {
+  list-style: none;
+  margin: 0 0 15px 0;
+}
+
+/* line 113, ../../all lessons/final_lesson/scss/_global.scss */
+ol li::before {
+  counter-increment: myCounter;
+  content: counter(myCounter) ".";
+  color: #f0145a;
+  margin: 0 10px 0 0;
+  font-weight: 700;
 }
 
 /* line 3, ../../all lessons/final_lesson/scss/_header.scss */
@@ -907,12 +928,17 @@ p {
   }
 }
 
-/* line 194, ../../all lessons/final_lesson/scss/_header.scss */
+/* line 195, ../../all lessons/final_lesson/scss/_header.scss */
+.black_header label[class=burger_open]:active {
+  background-color: #EDEDF7;
+}
+
+/* line 199, ../../all lessons/final_lesson/scss/_header.scss */
 .black_header label[class=burger_open] span {
   background: #323264;
 }
 
-/* line 201, ../../all lessons/final_lesson/scss/_header.scss */
+/* line 206, ../../all lessons/final_lesson/scss/_header.scss */
 .header_nav {
   display: flex;
   flex-direction: row-reverse;
@@ -920,14 +946,14 @@ p {
 }
 
 @media (min-width: 768px) {
-  /* line 207, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 212, ../../all lessons/final_lesson/scss/_header.scss */
   .header_nav a {
     color: inherit;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 201, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 206, ../../all lessons/final_lesson/scss/_header.scss */
   .header_nav {
     flex-direction: row;
     margin-top: 93px;
@@ -936,7 +962,7 @@ p {
 }
 
 @media (min-width: 1024px) {
-  /* line 201, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 206, ../../all lessons/final_lesson/scss/_header.scss */
   .header_nav {
     flex-direction: row-reverse;
     margin: 35px 0 0;
@@ -944,13 +970,13 @@ p {
 }
 
 @media (min-width: 1360px) {
-  /* line 201, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 206, ../../all lessons/final_lesson/scss/_header.scss */
   .header_nav {
     margin: 20px 0 0;
   }
 }
 
-/* line 233, ../../all lessons/final_lesson/scss/_header.scss */
+/* line 238, ../../all lessons/final_lesson/scss/_header.scss */
 .nav_menu {
   visibility: hidden;
   opacity: 0;
@@ -958,20 +984,20 @@ p {
   height: 0;
 }
 
-/* line 240, ../../all lessons/final_lesson/scss/_header.scss */
+/* line 245, ../../all lessons/final_lesson/scss/_header.scss */
 .nav_menu .active_page {
   pointer-events: none;
 }
 
 @media (min-width: 768px) {
-  /* line 240, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 245, ../../all lessons/final_lesson/scss/_header.scss */
   .nav_menu .active_page {
     border-color: #fff;
   }
 }
 
 @media (min-width: 768px) {
-  /* line 233, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 238, ../../all lessons/final_lesson/scss/_header.scss */
   .nav_menu {
     visibility: visible;
     opacity: 1;
@@ -981,51 +1007,53 @@ p {
 }
 
 @media (min-width: 768px) {
-  /* line 256, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 261, ../../all lessons/final_lesson/scss/_header.scss */
   .nav_menu img {
     display: none;
   }
 }
 
-/* line 262, ../../all lessons/final_lesson/scss/_header.scss */
+/* line 267, ../../all lessons/final_lesson/scss/_header.scss */
 .nav_menu ul {
   list-style: none;
 }
 
 @media (min-width: 768px) {
-  /* line 262, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 267, ../../all lessons/final_lesson/scss/_header.scss */
   .nav_menu ul {
     display: flex;
   }
-  /* line 268, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 273, ../../all lessons/final_lesson/scss/_header.scss */
   .nav_menu ul li {
     margin-right: 15px;
     border-bottom: 3px solid transparent;
   }
-  /* line 272, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 277, ../../all lessons/final_lesson/scss/_header.scss */
   .nav_menu ul li:hover {
     border-color: #fff;
   }
 }
 
-/* line 280, ../../all lessons/final_lesson/scss/_header.scss */
+/* line 285, ../../all lessons/final_lesson/scss/_header.scss */
 label[class=burger_open] {
   display: flex;
   flex-direction: column;
-  width: 18px;
+  width: 30px;
   position: relative;
   z-index: 11;
   cursor: pointer;
+  border-radius: 12px;
+  padding: 6px;
 }
 
 @media (min-width: 768px) {
-  /* line 280, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 285, ../../all lessons/final_lesson/scss/_header.scss */
   label[class=burger_open] {
     display: none;
   }
 }
 
-/* line 292, ../../all lessons/final_lesson/scss/_header.scss */
+/* line 299, ../../all lessons/final_lesson/scss/_header.scss */
 label[class=burger_open] span {
   background: #fff;
   border-radius: 10px;
@@ -1034,13 +1062,13 @@ label[class=burger_open] span {
   width: 100%;
 }
 
-/* line 301, ../../all lessons/final_lesson/scss/_header.scss */
+/* line 308, ../../all lessons/final_lesson/scss/_header.scss */
 #burger_nav {
   display: none;
 }
 
 @media (max-width: 767px) {
-  /* line 307, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 314, ../../all lessons/final_lesson/scss/_header.scss */
   #burger_nav:checked ~ .nav_menu {
     visibility: visible;
     opacity: 1;
@@ -1054,51 +1082,61 @@ label[class=burger_open] span {
     text-align: center;
     background-color: #fff;
   }
-  /* line 320, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 327, ../../all lessons/final_lesson/scss/_header.scss */
   #burger_nav:checked ~ .nav_menu .active_page {
     border-bottom: none;
     color: #f0145a;
   }
-  /* line 324, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 331, ../../all lessons/final_lesson/scss/_header.scss */
   #burger_nav:checked ~ .nav_menu .active_page a {
     color: inherit;
   }
-  /* line 329, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 336, ../../all lessons/final_lesson/scss/_header.scss */
   #burger_nav:checked ~ .nav_menu img {
     margin-bottom: 15px;
   }
-  /* line 333, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 340, ../../all lessons/final_lesson/scss/_header.scss */
   #burger_nav:checked ~ .nav_menu a {
     display: block;
     padding: 15px 0;
     font-size: 24px;
     line-height: 28px;
   }
-  /* line 340, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 346, ../../all lessons/final_lesson/scss/_header.scss */
+  #burger_nav:checked ~ .nav_menu a:active {
+    background-color: #EDEDF7;
+  }
+  /* line 351, ../../all lessons/final_lesson/scss/_header.scss */
   #burger_nav:checked ~ .nav_menu li {
     background-color: #f5f5fa;
     margin-bottom: 1px;
   }
-  /* line 347, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 358, ../../all lessons/final_lesson/scss/_header.scss */
   .burger_close {
     position: absolute;
     top: 15px;
     right: 15px;
     cursor: pointer;
+    padding: 3px 4px;
+    border-radius: 12px;
   }
-  /* line 354, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 366, ../../all lessons/final_lesson/scss/_header.scss */
+  .burger_close:active {
+    background-color: #EDEDF7;
+  }
+  /* line 371, ../../all lessons/final_lesson/scss/_header.scss */
   .burger_close:before {
     transform: translateY(6px) rotate(135deg);
   }
-  /* line 358, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 375, ../../all lessons/final_lesson/scss/_header.scss */
   .burger_close:after {
     transform: translateY(-6px) rotate(-135deg);
   }
-  /* line 362, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 379, ../../all lessons/final_lesson/scss/_header.scss */
   .burger_close span {
     transform: scale(0);
   }
-  /* line 366, ../../all lessons/final_lesson/scss/_header.scss */
+  /* line 383, ../../all lessons/final_lesson/scss/_header.scss */
   .burger_close span,
   .burger_close:after,
   .burger_close:before {
@@ -2030,30 +2068,52 @@ label[class=burger_open] span {
 }
 
 /* line 667, ../../all lessons/final_lesson/scss/_homepage.scss */
+.publications_card img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 672, ../../all lessons/final_lesson/scss/_homepage.scss */
 .publications_card .text {
   padding: 20px;
 }
 
-/* line 670, ../../all lessons/final_lesson/scss/_homepage.scss */
+/* line 675, ../../all lessons/final_lesson/scss/_homepage.scss */
 .publications_card .text h4 {
   margin-bottom: 10px;
 }
 
-/* line 675, ../../all lessons/final_lesson/scss/_homepage.scss */
+/* line 680, ../../all lessons/final_lesson/scss/_homepage.scss */
 .publications_card .text time {
   display: block;
 }
 
-/* line 681, ../../all lessons/final_lesson/scss/_homepage.scss */
+@media (min-width: 850px) {
+  /* line 680, ../../all lessons/final_lesson/scss/_homepage.scss */
+  .publications_card .text time {
+    margin-bottom: 20px;
+  }
+}
+
+/* line 689, ../../all lessons/final_lesson/scss/_homepage.scss */
 .publications_card .text p {
-  border-top: solid 3px #e6e6f0;
-  padding-top: 20px;
-  margin: 0;
+  margin: 0 0 20px;
   display: none;
 }
 
+/* line 693, ../../all lessons/final_lesson/scss/_homepage.scss */
+.publications_card .text p:first-of-type {
+  padding-top: 20px;
+  border-top: solid 3px #e6e6f0;
+}
+
+/* line 698, ../../all lessons/final_lesson/scss/_homepage.scss */
+.publications_card .text p:last-of-type {
+  margin-bottom: 0;
+}
+
 @media (min-width: 850px) {
-  /* line 681, ../../all lessons/final_lesson/scss/_homepage.scss */
+  /* line 689, ../../all lessons/final_lesson/scss/_homepage.scss */
   .publications_card .text p {
     display: -webkit-box;
     -webkit-line-clamp: 3;
@@ -3129,6 +3189,12 @@ label[class=burger_open] span {
   }
 }
 
+/* line 127, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .publications_main {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
 /* line 1, ../../all lessons/final_lesson/scss/_publications.scss */
 .publications_page.margin_main {
   margin-top: 120px;
@@ -3256,6 +3322,192 @@ label[class=burger_open] span {
   .publications_page .button_bg {
     padding: 60px 0;
   }
+}
+
+/* line 3, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publication_entry {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  /* line 3, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publication_entry {
+    padding-top: 60px;
+  }
+}
+
+/* line 13, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry {
+  max-width: 909px;
+  margin: 0 -20px;
+}
+
+/* line 17, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry img {
+  display: block;
+  margin: 0 auto;
+}
+
+/* line 22, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text {
+  padding: 20px 20px 20px;
+}
+
+@media (min-width: 768px) {
+  /* line 22, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publications_card_entry .text {
+    padding: 40px 20px 40px;
+  }
+}
+
+/* line 29, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text h2 {
+  margin-bottom: 10px;
+  color: #323264;
+}
+
+@media (min-width: 768px) {
+  /* line 29, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publications_card_entry .text h2 {
+    font-size: 32px;
+    line-height: 1.2;
+  }
+}
+
+/* line 40, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text h1 {
+  margin: 0 0 40px;
+}
+
+@media (min-width: 768px) {
+  /* line 40, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publications_card_entry .text h1 {
+    font-size: 42px;
+    line-height: 1.2;
+    margin: 40px 0;
+  }
+}
+
+/* line 52, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text h3 {
+  color: #323264;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  /* line 52, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publications_card_entry .text h3 {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-bottom: 18px;
+  }
+}
+
+@media (min-width: 768px) {
+  /* line 64, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publications_card_entry .text ol + p {
+    margin-bottom: 40px;
+  }
+}
+
+/* line 70, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text span {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 16px;
+  color: #b3b3ba;
+  margin: 10px 0 20px;
+}
+
+@media (min-width: 768px) {
+  /* line 70, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publications_card_entry .text span {
+    margin: 15px 0 40px;
+  }
+}
+
+/* line 83, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text time {
+  display: block;
+  margin-bottom: 20px;
+}
+
+@media (min-width: 768px) {
+  /* line 83, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publications_card_entry .text time {
+    margin-bottom: 40px;
+  }
+}
+
+/* line 93, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text span + p {
+  margin-bottom: 40px;
+}
+
+/* line 97, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text p {
+  display: block;
+}
+
+/* line 100, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text p:first-of-type {
+  padding-top: 20px;
+  border-top: solid 3px #e6e6f0;
+}
+
+@media (min-width: 768px) {
+  /* line 100, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .publications_card_entry .text p:first-of-type {
+    padding-top: 40px;
+  }
+}
+
+/* line 109, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_card_entry .text p:last-of-type {
+  padding-bottom: 40px;
+  border-bottom: solid 3px #e6e6f0;
+  margin: 0;
+}
+
+/* line 118, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .icons {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media (min-width: 768px) {
+  /* line 118, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+  .publications_entry .icons {
+    display: block;
+  }
+}
+
+/* line 127, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .icons .icon {
+  width: 42px;
+  height: 42px;
+  margin-right: 10px;
+  border-radius: 12px;
+  background: #f5f5fa;
+  padding: 5px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* line 138, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .icons .icon:hover {
+  background: rgba(224, 224, 224, 0.808);
+}
+
+/* line 144, ../../all lessons/final_lesson/scss/_publications_entry.scss */
+.publications_entry .publications_main {
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */
