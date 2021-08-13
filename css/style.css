@@ -1287,7 +1287,6 @@ label[class=burger_open] span {
   justify-content: center;
   align-items: center;
   height: 95vh;
-  padding-top: 100px;
   padding-bottom: 15px;
   position: relative;
   background: url("../images/Shade.png") no-repeat, url("../images/SymbolLongleg.png") no-repeat;
