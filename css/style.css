@@ -432,7 +432,7 @@ img {
 }
 
 /* line 35, ../../all lessons/final_lesson/scss/_variable.scss */
-.main_info h2, .contact_form h1, .publications_entry .publications_card_entry .text h2 {
+.main_info h2, .contact_form h1, .services_page .contact_form span.title, .publications_entry .publications_card_entry .text h2 {
   font-size: 22px;
   line-height: 1.2;
   font-weight: 500;
@@ -534,6 +534,11 @@ img {
 /* line 134, ../../all lessons/final_lesson/scss/_variable.scss */
 .publications button:hover, .contact_form button:hover, .services_page .info_service .button_service:hover {
   background-color: #0085ff;
+}
+
+/* line 138, ../../all lessons/final_lesson/scss/_variable.scss */
+.publications button:active, .contact_form button:active, .services_page .info_service .button_service:active {
+  background-color: #006cff;
 }
 
 /* line 1, ../../all lessons/final_lesson/scss/_global.scss */
@@ -1112,7 +1117,7 @@ label[class=burger_open] span {
     margin-bottom: 1px;
   }
   /* line 358, ../../all lessons/final_lesson/scss/_header.scss */
-  .burger_close {
+  .close_form {
     position: absolute;
     top: 15px;
     right: 15px;
@@ -1121,25 +1126,25 @@ label[class=burger_open] span {
     border-radius: 12px;
   }
   /* line 366, ../../all lessons/final_lesson/scss/_header.scss */
-  .burger_close:active {
+  .close_form:active {
     background-color: #EDEDF7;
   }
   /* line 371, ../../all lessons/final_lesson/scss/_header.scss */
-  .burger_close:before {
+  .close_form:before {
     transform: translateY(6px) rotate(135deg);
   }
   /* line 375, ../../all lessons/final_lesson/scss/_header.scss */
-  .burger_close:after {
+  .close_form:after {
     transform: translateY(-6px) rotate(-135deg);
   }
   /* line 379, ../../all lessons/final_lesson/scss/_header.scss */
-  .burger_close span {
+  .close_form span {
     transform: scale(0);
   }
   /* line 383, ../../all lessons/final_lesson/scss/_header.scss */
-  .burger_close span,
-  .burger_close:after,
-  .burger_close:before {
+  .close_form span,
+  .close_form:after,
+  .close_form:before {
     background: #EC6F5D;
     content: "";
     width: 18px;
@@ -3023,41 +3028,46 @@ label[class=burger_open] span {
   }
 }
 
-/* line 2, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 1, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page {
+  position: relative;
+}
+
+/* line 3, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .services_bg {
   background: linear-gradient(38deg, #643E72 10%, #323264 33%, transparent 40%), linear-gradient(rgba(50, 50, 100, 0.1) 0px, #323264 500px, #323264 59.9%), url("../images/key.jpg") 50% 0%/auto 500px no-repeat;
   padding-top: 100px;
 }
 
 @media (min-width: 768px) {
-  /* line 2, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 3, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .services_bg {
     padding-top: 190px;
   }
 }
 
 @media (min-width: 1024px) {
-  /* line 2, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 3, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .services_bg {
     padding-top: 146px;
   }
 }
 
 @media (min-width: 1360px) {
-  /* line 2, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 3, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .services_bg {
     padding-top: 140px;
     background: linear-gradient(18deg, #643E72 10%, #323264 33%, transparent 40%), linear-gradient(rgba(50, 50, 100, 0.1) 0px, #323264 500px, #323264 59.9%), url("../images/key.jpg") 50% 0%/100% 500px no-repeat;
   }
 }
 
-/* line 20, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 21, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .info_service {
   padding: 30px 0 40px;
 }
 
 @media (min-width: 650px) {
-  /* line 20, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 21, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .info_service {
     text-align: center;
     max-width: 860px;
@@ -3066,20 +3076,20 @@ label[class=burger_open] span {
 }
 
 @media (min-width: 768px) {
-  /* line 20, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 21, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .info_service {
     padding: 50px 0 80px;
   }
 }
 
 @media (min-width: 860px) {
-  /* line 20, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 21, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .info_service {
     font-size: 21px;
   }
 }
 
-/* line 37, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 38, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .info_service .for_img {
   width: 92px;
   height: 92px;
@@ -3093,28 +3103,38 @@ label[class=burger_open] span {
 }
 
 @media (min-width: 650px) {
-  /* line 37, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 38, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .info_service .for_img {
     margin: 0 auto 20px;
   }
 }
 
-/* line 53, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 54, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .info_service h1 {
   margin-bottom: 20px;
 }
 
-/* line 58, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 59, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .info_service p {
   margin-top: 0;
 }
 
-/* line 61, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 62, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .info_service p:last-of-type {
   margin-bottom: 40px;
 }
 
-/* line 71, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 67, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .info_service .button_service {
+  text-align: center;
+}
+
+/* line 72, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .info_service #button_form {
+  display: none;
+}
+
+/* line 77, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .list {
   border-top: 4px solid rgba(255, 255, 255, 0.5);
   padding: 20px 0 23px;
@@ -3123,45 +3143,45 @@ label[class=burger_open] span {
 }
 
 @media (min-width: 768px) {
-  /* line 71, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 77, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .list {
     padding-bottom: 80px;
   }
 }
 
-/* line 81, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 87, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .list h3 {
   margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
-  /* line 81, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 87, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .list h3 {
     font-size: 24px;
     margin-bottom: 20px;
   }
 }
 
-/* line 94, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 98, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .list_service {
   padding-left: 30px;
   list-style: none;
 }
 
 @media (min-width: 650px) {
-  /* line 94, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 98, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .list_service {
     columns: 2;
   }
 }
 
-/* line 103, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 107, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .list_service li {
   margin-bottom: 15px;
 }
 
 @media (min-width: 650px) {
-  /* line 103, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 107, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .list_service li {
     max-width: 500px;
     margin: 0 auto 15px;
@@ -3169,30 +3189,154 @@ label[class=burger_open] span {
   }
 }
 
-/* line 114, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 118, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .cases_main {
   padding-top: 40px;
   margin-bottom: 20px;
 }
 
 @media (min-width: 700px) {
-  /* line 114, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 118, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .cases_main {
     padding-top: 60px;
   }
 }
 
 @media (min-width: 835px) {
-  /* line 114, ../../all lessons/final_lesson/scss/_services_page.scss */
+  /* line 118, ../../all lessons/final_lesson/scss/_services_page.scss */
   .services_page .cases_main {
     margin-bottom: 40px;
   }
 }
 
-/* line 127, ../../all lessons/final_lesson/scss/_services_page.scss */
+/* line 131, ../../all lessons/final_lesson/scss/_services_page.scss */
 .services_page .publications_main {
   border-top-left-radius: 12px;
   border-top-right-radius: 12px;
+}
+
+/* line 136, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form {
+  width: 375px;
+  margin: 0;
+  text-align: left;
+  position: relative;
+  border-radius: 12px;
+}
+
+@media (min-width: 1024px) {
+  /* line 136, ../../all lessons/final_lesson/scss/_services_page.scss */
+  .services_page .contact_form {
+    width: 527px;
+  }
+}
+
+/* line 147, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form input,
+.services_page .contact_form textarea {
+  width: 335px;
+}
+
+@media (min-width: 1024px) {
+  /* line 147, ../../all lessons/final_lesson/scss/_services_page.scss */
+  .services_page .contact_form input,
+  .services_page .contact_form textarea {
+    width: 487px;
+  }
+}
+
+/* line 156, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form span.title {
+  color: #f0145a;
+  margin-bottom: 20px;
+  font-weight: 500;
+  display: block;
+}
+
+@media (min-width: 1024px) {
+  /* line 156, ../../all lessons/final_lesson/scss/_services_page.scss */
+  .services_page .contact_form span.title {
+    background: linear-gradient(to right, #f0145a, #ef8080);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: 700;
+    font-size: 32px;
+  }
+}
+
+/* line 172, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form .close_form_contact {
+  position: absolute;
+  top: 23px;
+  right: 15px;
+  cursor: pointer;
+  padding: 3px 4px;
+  border-radius: 12px;
+}
+
+@media (min-width: 1024px) {
+  /* line 172, ../../all lessons/final_lesson/scss/_services_page.scss */
+  .services_page .contact_form .close_form_contact {
+    top: 28px;
+  }
+}
+
+/* line 184, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form .close_form_contact:active {
+  background-color: #EDEDF7;
+}
+
+/* line 189, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form .close_form_contact::before {
+  transform: translateY(6px) rotate(135deg);
+}
+
+/* line 193, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form .close_form_contact::after {
+  transform: translateY(-6px) rotate(-135deg);
+}
+
+/* line 197, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form .close_form_contact span {
+  transform: scale(0);
+}
+
+/* line 201, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .contact_form .close_form_contact span,
+.services_page .contact_form .close_form_contact:after,
+.services_page .contact_form .close_form_contact:before {
+  background: #EC6F5D;
+  content: "";
+  width: 18px;
+  display: block;
+  height: 2px;
+  margin: 4px 0;
+}
+
+/* line 213, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page .bg_form {
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  transform: translateY(-600px);
+  background: linear-gradient(rgba(50, 50, 100, 0.7) 0%, rgba(50, 50, 100, 0.7) 100%), linear-gradient(#fff 0%, #fff 100%);
+}
+
+/* line 230, ../../all lessons/final_lesson/scss/_services_page.scss */
+.services_page #button_form:checked ~ .bg_form {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+  transition: 0.4s ease;
+  z-index: 15;
 }
 
 /* line 1, ../../all lessons/final_lesson/scss/_publications.scss */
