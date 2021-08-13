@@ -46,7 +46,7 @@
                             <span></span>
                         </label>
                         <div class="nav_menu">
-                            <label class="burger_close" for="burger_nav"><span></span></label>
+                            <label class="close_form" for="burger_nav"><span></span></label>
                             <img src="images/Symbol.png" alt="Symbol">
                             <ul>
                                 <li><a href="about.html">про нас</a></li>
@@ -70,7 +70,20 @@
                         <h1>IT та електронна комеція</h1>
                         <p>Нескінчений потік договорів, податкові питання, трудові відносини, корпоративні папери — юридична робота відволікає вас від ведення бізнесу. Але роботи не так вже й багато, щоб наймати інхауз-юриста. </p>
                         <p>До того ж, з часом робота стане однотипною і нецікавою для штатного юриста. А ще ми добре знаємо, як важко в Україні знайти хорошого кандидата з досвідом у сфері інформаційних технологій.</p>
-                        <button class="button_service">Безкоштовна консультація</button>
+                        <input id="button_form" type="checkbox">
+                        <label class="button_service" for="button_form">Безкоштовна консультація</label>
+                        <div class="bg_form">
+                            <form action="#" class="contact_form">
+                                <label class="close_form_contact" for="button_form"><span></span></label>
+                                <span class="title">Ми хотіли б Вам допомогти</span>
+                                <p><input type="text" placeholder="Iм’я" required name="user_name" autocomplete="off"></p>
+                                <p><textarea name="message" placeholder="Повідомлення" autocomplete="off"></textarea></p>
+                                <h3>Як вам відповісти?</h3>
+                                <p><input type="number" placeholder="Номер телефона" required name="number" autocomplete="off"></p>
+                                <p><input type="email" placeholder="Чи email" name="email" autocomplete="off"></p>
+                                <button type="submit">Надіслати запит</button>
+                            </form>
+                        </div>
                     </div>
                     <div class="list">
                         <h3>Послуги цього напрямку:</h3>
